@@ -468,6 +468,11 @@
 		}
 	}
 
+	$(document).ready(function(){
+		$('#deleteModal').on('hidden.bs.modal', function (e) {
+			initialize();
+		  });
+	});
 	function deleteSld(e) {
 		const oid = e.dataset.id;
 		const store = new Store('../data/');
@@ -476,7 +481,6 @@
 			$("#confirmDelete").unbind( "click" );
 			$("#confirmDelete").click(function(){
 				store.deleteSlide(oid);
-				initialize();
 			});			
 		} else {
 			alert('No Data Id');
