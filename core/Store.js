@@ -620,6 +620,25 @@ class Store {
       },
     }).then(this.errorHandler);
   }
+
+  /**
+   * delete slide
+   * @param {object} id - the heatmap object id
+   * @return {promise} - promise which resolves with response
+   **/
+  deleteSlide(id) {
+    const suffix = 'Slide/delete';
+    const url = this.base + suffix;
+    console.log(id);
+    const query = {
+      '_id': id
+    };
+    return fetch(url + '?' + objToParamStr(query), {
+      method: 'DELETE',
+      credentials: 'include',
+      mode: 'cors',
+    }).then(this.errorHandler);
+  }
 }
 
 try {
