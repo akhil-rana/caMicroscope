@@ -39,8 +39,11 @@ nav li:not(.active):hover a{
 }
 
 #deleteBtn{
-	margin-left: 0.6em !important;
+	margin-left: 0.6em;
 }
 #deleteBtn i{
 	color: white;
+}
+#open-delete{
+	display: inline-flex;
 }

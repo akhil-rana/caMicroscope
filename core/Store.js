@@ -629,7 +629,6 @@ class Store {
   deleteSlide(id) {
     const suffix = 'Slide/delete';
     const url = this.base + suffix;
-    console.log(id);
     const query = {
       '_id': id
     };
