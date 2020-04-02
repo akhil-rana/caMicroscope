@@ -473,6 +473,7 @@
 		const store = new Store('../data/');
 		if (oid) {
 			$('#deleteModal').modal('toggle');
+			$("#confirmDelete").unbind( "click" );
 			$("#confirmDelete").click(function(){
 				store.deleteSlide(oid);
 				initialize();
