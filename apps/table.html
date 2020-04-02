@@ -225,7 +225,7 @@
 			</div>
 			<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button type="button" id='confirmDelete' class="btn btn-danger">Yes</button>
+			<button type="button" id='confirmDelete' data-dismiss="modal" class="btn btn-danger">Yes</button>
 			</div>
 		</div>
 		</div>
@@ -475,6 +475,7 @@
 			$('#deleteModal').modal('toggle');
 			$("#confirmDelete").click(function(){
 				store.deleteSlide(oid);
+				initialize();
 			});			
 		} else {
 			alert('No Data Id');
