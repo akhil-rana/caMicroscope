@@ -54,7 +54,6 @@ async function train(model, data, Params) {
   });
 }
 
-
 async function run(Layers, Params) {
   try {
     const data = new Data();

@@ -15,6 +15,7 @@ $(document).ready(function() {
     $('#advancedToggle').prop('checked', true);
     console.log('Mode: Advanced');
   }
+
   if (localStorage.getItem('serverSide') == 'true') {
     serverSide = true;
     $('#serverSideToggle').prop('checked', true);
@@ -52,8 +53,20 @@ $('#serverSideToggle').change(function() {
     localStorage.setItem('serverSide', 'false');
     serverSide = false;
   }
+
 });
 
+function advancedModeChanges() {
+  if (advancedMode) {
+    $('.advancedLayersSettings').show();
+    $('#inputLayerActivation').val($('#inputActivation').val());
+    $('#inputLayerPadding').val($('#inputPadding').val());
+    $('#inputLayerStrides').val(Number($('#inputStride').val()));
+    $('#inputLayerKernelInitializer').val($('#inputKernelInitializer').val());
+    $('#outputLayerKernelInitializer').val($('#outputKernelInitializer').val());
+    $('#outputLayerActivation').val($('#outputActivation').val());
+  }
+}
 
 function advancedModeChanges() {
   if (advancedMode) {
